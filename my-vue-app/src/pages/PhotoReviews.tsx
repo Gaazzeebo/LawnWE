@@ -12,25 +12,76 @@ interface Photo {
 const PhotosReviews: React.FC = () => {
   const photos: Photo[] = [
     {
-      src: '/images/photos/photo1.jpg',
-      alt: 'Beautiful front lawn',
-      caption: 'Beautiful Front Lawn',
-      description: 'This project involved mowing and maintaining a sprawling front lawn, ensuring it remains lush and healthy throughout the seasons.',
-    },
-    {
-      src: '/images/photos/photo2.jpg',
-      alt: 'Expert edging service',
-      caption: 'Expert Edging Service',
-      description: 'Precision edging around walkways and flower beds to give the garden a clean and professional look.',
-    },
-    {
-      src: '/images/photos/photo3.jpg',
-      alt: 'Lush green grass',
-      caption: 'Lush Green Grass',
-      description: 'Comprehensive fertilization and weed control to promote vibrant and robust grass growth.',
-    },
-    // Add more photos as needed
-  ];
+        src: '/images/photos/photo1.jpg',
+        alt: 'Beautiful front lawn',
+        caption: 'Beautiful Front Lawn',
+        description:
+          'This project involved mowing and maintaining a sprawling front lawn, ensuring it remains lush and healthy throughout the seasons.',
+      },
+      {
+        src: '/images/photos/photo2.jpg',
+        alt: 'Expert edging service',
+        caption: 'Expert Edging Service',
+        description:
+          'Precision edging around walkways and flower beds to give the garden a clean and professional look.',
+      },
+      {
+        src: '/images/photos/photo3.jpg',
+        alt: 'Lush green grass',
+        caption: 'Lush Green Grass',
+        description:
+          'Comprehensive fertilization and weed control to promote vibrant and robust grass growth.',
+      },
+      {
+        src: '/images/photos/photo4.jpg',
+        alt: 'Seasonal cleanup',
+        caption: 'Seasonal Cleanup',
+        description:
+          'Thorough seasonal cleanup to prepare your lawn for the upcoming season, removing debris and maintaining plant health.',
+      },
+      {
+        src: '/images/photos/photo5.jpg',
+        alt: 'Landscape design project',
+        caption: 'Landscape Design',
+        description:
+          'Innovative landscape design to transform your outdoor space into a stunning and functional area.',
+      },
+      {
+        src: '/images/photos/photo6.jpg',
+        alt: 'Aeration service in action',
+        caption: 'Aeration Service',
+        description:
+          'Professional aeration services to improve soil health and promote deeper root growth for a greener lawn.',
+      },
+      {
+        src: '/images/photos/photo7.jpg',
+        alt: 'Weed control treatment',
+        caption: 'Weed Control',
+        description:
+          'Effective weed control treatments to maintain a pristine lawn, free from unwanted plants.',
+      },
+      {
+        src: '/images/photos/photo8.jpg',
+        alt: 'Edging and trimming near a garden bed',
+        caption: 'Edging & Trimming',
+        description:
+          'Detailed edging and trimming to enhance the aesthetic appeal of your garden beds and walkways.',
+      },
+      {
+        src: '/images/photos/photo9.jpg',
+        alt: 'Fertilization process being applied',
+        caption: 'Fertilization',
+        description:
+          'Expert fertilization processes applied to nourish your lawn, ensuring lush and vibrant grass.',
+      },
+      {
+        src: '/images/photos/photo10.jpg',
+        alt: 'Maintaining a healthy lawn',
+        caption: 'Lawn Maintenance',
+        description:
+          'Ongoing lawn maintenance services to keep your lawn healthy, green, and immaculate all year round.',
+      },
+    ];
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);

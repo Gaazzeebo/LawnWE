@@ -55,77 +55,113 @@ const Home: React.FC = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-green-700 text-center mb-12">
-            Our Services
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Service Card 1 */}
-            <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 flex flex-col items-center text-center">
-              <FaLeaf className="text-green-500 text-4xl mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-800 mb-2">
-                Lawn Mowing
-              </h3>
-              <p className="text-gray-600">
-                Regular mowing to keep your lawn healthy and well-maintained. We ensure precise cutting for a neat appearance.
-              </p>
-            </div>
-            {/* Service Card 2 */}
-            <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 flex flex-col items-center text-center">
-              <FaSprayCan className="text-green-500 text-4xl mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-800 mb-2">
-                Fertilization
-              </h3>
-              <p className="text-gray-600">
-                Expert fertilization services to promote lush and green grass. Our tailored programs cater to your lawn’s specific needs.
-              </p>
-            </div>
-            {/* Service Card 3 */}
-            <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 flex flex-col items-center text-center">
-              <FaSeedling className="text-green-500 text-4xl mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-800 mb-2">
-                Weed Control
-              </h3>
-              <p className="text-gray-600">
-                Effective weed management to maintain a pristine lawn. We use eco-friendly solutions to eliminate unwanted plants.
-              </p>
-            </div>
-          </div>
+<section className="py-16 bg-gradient-to-r from-green-100 to-green-50">
+  <div className="container mx-auto px-4">
+    <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-green-500 text-center mb-12">
+      Elevate Your Outdoor Space
+    </h2>
+    <p className="max-w-2xl mx-auto text-center text-gray-700 text-lg mb-16">
+      Transform your outdoor space into a sanctuary of beauty and relaxation. 
+      We offer tailored solutions to help your garden and lawn thrive, making 
+      your home the envy of the neighborhood.
+    </p>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      {/* Service Card 1 */}
+      <div className="relative group bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-500">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-green-500 opacity-75 group-hover:opacity-50 transition-opacity duration-500"></div>
+        <div className="relative p-8">
+          <FaLeaf className="text-white text-6xl group-hover:text-green-900 transition-colors duration-300 mb-4" />
+          <h3 className="text-3xl font-bold text-white group-hover:text-green-900 transition-colors duration-300 mb-2">
+            Lawn Mowing Excellence
+          </h3>
+          <p className="text-white group-hover:text-gray-100 transition-colors duration-300">
+            Discover precision cutting that maintains your lawn's health and brings a polished look to your entire yard.
+          </p>
         </div>
-      </section>
+        <div className="absolute bottom-0 left-0 w-full bg-green-600 text-center py-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <a href="#" className="text-white font-bold">Learn More</a>
+        </div>
+      </div>
+      {/* Service Card 2 */}
+      <div className="relative group bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-500">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-green-500 opacity-75 group-hover:opacity-50 transition-opacity duration-500"></div>
+        <div className="relative p-8">
+          <FaSprayCan className="text-white text-6xl group-hover:text-green-900 transition-colors duration-300 mb-4" />
+          <h3 className="text-3xl font-bold text-white group-hover:text-green-900 transition-colors duration-300 mb-2">
+            Fertilization Science
+          </h3>
+          <p className="text-white group-hover:text-gray-100 transition-colors duration-300">
+            Tailored fertilization programs that encourage deep roots and vibrant green grass, custom-made for your lawn’s needs.
+          </p>
+        </div>
+        <div className="absolute bottom-0 left-0 w-full bg-green-600 text-center py-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <a href="#" className="text-white font-bold">Learn More</a>
+        </div>
+      </div>
+      {/* Service Card 3 */}
+      <div className="relative group bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-500">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-green-500 opacity-75 group-hover:opacity-50 transition-opacity duration-500"></div>
+        <div className="relative p-8">
+          <FaSeedling className="text-white text-6xl group-hover:text-green-900 transition-colors duration-300 mb-4" />
+          <h3 className="text-3xl font-bold text-white group-hover:text-green-900 transition-colors duration-300 mb-2">
+            Smart Weed Control
+          </h3>
+          <p className="text-white group-hover:text-gray-100 transition-colors duration-300">
+            Stay one step ahead of invasive weeds with eco-friendly solutions that protect your lawn and plants.
+          </p>
+        </div>
+        <div className="absolute bottom-0 left-0 w-full bg-green-600 text-center py-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <a href="#" className="text-white font-bold">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      {/* Testimonials Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-green-700 text-center mb-12">
-            What Our Customers Say
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial) => (
-              <div
-                key={testimonial.id}
-                className="bg-gray-100 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
-              >
-                <p className="text-gray-700 italic mb-4 flex-grow">
-                  "{testimonial.quote}"
-                </p>
-                <div className="flex items-center mt-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full mr-4 object-cover"
-                  />
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-800">{testimonial.name}</h4>
-                    <p className="text-gray-600">{testimonial.location}</p>
-                  </div>
+
+     {/* Testimonials Section */}
+<section className="py-16 bg-gradient-to-r from-white to-gray-50">
+  <div className="container mx-auto px-4">
+    <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-green-500 text-center mb-12">
+      Hear from Our Happy Clients
+    </h2>
+    <p className="max-w-2xl mx-auto text-center text-gray-700 text-lg mb-16">
+      We value our clients and are proud to have earned their trust. Here’s what they have to say about their experience with us.
+    </p>
+    <div className="relative">
+      <div className="swiper-container">
+        <div className="swiper-wrapper">
+          {testimonials.map((testimonial) => (
+            <div
+              key={testimonial.id}
+              className="swiper-slide bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col"
+            >
+              <p className="text-gray-700 italic mb-4 flex-grow">
+                "{testimonial.quote}"
+              </p>
+              <div className="flex items-center mt-4">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-16 h-16 rounded-full mr-4 object-cover shadow-lg"
+                />
+                <div>
+                  <h4 className="text-xl font-semibold text-green-700">{testimonial.name}</h4>
+                  <p className="text-gray-600">{testimonial.location}</p>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-      </section>
+
+        {/* Navigation Arrows */}
+        <div className="swiper-button-prev text-green-700 hover:text-green-500"></div>
+        <div className="swiper-button-next text-green-700 hover:text-green-500"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Call to Action */}
       <section className="py-16 bg-green-700 text-white text-center">

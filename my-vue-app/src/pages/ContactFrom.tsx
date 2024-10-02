@@ -1,5 +1,3 @@
-// File: src/pages/ContactForm.tsx
-
 import React, { useState } from 'react';
 import { FaUser, FaEnvelope, FaPhone, FaConciergeBell, FaCommentDots } from 'react-icons/fa';
 
@@ -14,6 +12,7 @@ const ContactForm: React.FC = () => {
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -25,7 +24,6 @@ const ContactForm: React.FC = () => {
       [name]: value,
     });
 
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors({
         ...errors,
@@ -48,10 +46,8 @@ const ContactForm: React.FC = () => {
     if (formData.phone && !/^\d{10}$/.test(formData.phone)) {
       newErrors.phone = 'Phone number must be 10 digits.';
     }
-    if (!formData.service.trim())
-      newErrors.service = 'Service required.';
-    if (!formData.message.trim())
-      newErrors.message = 'Message is required.';
+    if (!formData.service.trim()) newErrors.service = 'Service is required.';
+    if (!formData.message.trim()) newErrors.message = 'Message is required.';
 
     return newErrors;
   };
@@ -61,17 +57,21 @@ const ContactForm: React.FC = () => {
     const validationErrors = validate();
 
     if (Object.keys(validationErrors).length === 0) {
-      // Handle form submission, e.g., send data to server
-      console.log(formData);
-      setIsSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: '',
-      });
-      setErrors({});
+      setLoading(true);
+
+      setTimeout(() => {
+        // Simulate form submission
+        setIsSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: '',
+        });
+        setErrors({});
+        setLoading(false);
+      }, 2000);
     } else {
       setErrors(validationErrors);
       setIsSubmitted(false);
@@ -80,8 +80,8 @@ const ContactForm: React.FC = () => {
 
   return (
     <div className="flex items-center justify-center py-16 bg-gray-50">
-      <div className="w-full max-w-lg p-8 bg-white rounded-lg shadow-md">
-        <h2 className="mb-6 text-3xl font-semibold text-center text-green-700">
+      <div className="w-full max-w-lg p-8 bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105">
+        <h2 className="mb-6 text-3xl font-bold text-center text-green-700">
           Contact Us
         </h2>
 
@@ -101,21 +101,24 @@ const ContactForm: React.FC = () => {
               id="name"
               value={formData.name}
               onChange={handleChange}
-              className={`w-full px-10 py-3 border ${
+              className={`w-full pl-10 pr-4 py-3 border ${
                 errors.name ? 'border-red-500' : 'border-gray-300'
-              } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
-              placeholder=" "
+              } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 peer`}
               aria-label="Name"
               required
             />
             <label
               htmlFor="name"
-              className="absolute left-10 top-3 text-gray-500 transition-all pointer-events-none"
+              className={`absolute left-10 top-3 text-gray-500 transition-all pointer-events-none ${
+                formData.name ? '-translate-y-6 scale-75' : ''
+              } peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-3`}
             >
               Name *
             </label>
             {errors.name && (
-              <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+              <p className="mt-1 text-sm text-red-500" role="alert">
+                {errors.name}
+              </p>
             )}
           </div>
 
@@ -128,21 +131,24 @@ const ContactForm: React.FC = () => {
               id="email"
               value={formData.email}
               onChange={handleChange}
-              className={`w-full px-10 py-3 border ${
+              className={`w-full pl-10 pr-4 py-3 border ${
                 errors.email ? 'border-red-500' : 'border-gray-300'
-              } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
-              placeholder=" "
+              } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 peer`}
               aria-label="Email"
               required
             />
             <label
               htmlFor="email"
-              className="absolute left-10 top-3 text-gray-500 transition-all pointer-events-none"
+              className={`absolute left-10 top-3 text-gray-500 transition-all pointer-events-none ${
+                formData.email ? '-translate-y-6 scale-75' : ''
+              } peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-3`}
             >
               Email *
             </label>
             {errors.email && (
-              <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+              <p className="mt-1 text-sm text-red-500" role="alert">
+                {errors.email}
+              </p>
             )}
           </div>
 
@@ -155,20 +161,23 @@ const ContactForm: React.FC = () => {
               id="phone"
               value={formData.phone}
               onChange={handleChange}
-              className={`w-full px-10 py-3 border ${
+              className={`w-full pl-10 pr-4 py-3 border ${
                 errors.phone ? 'border-red-500' : 'border-gray-300'
-              } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
-              placeholder=" "
+              } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 peer`}
               aria-label="Phone"
             />
             <label
               htmlFor="phone"
-              className="absolute left-10 top-3 text-gray-500 transition-all pointer-events-none"
+              className={`absolute left-10 top-3 text-gray-500 transition-all pointer-events-none ${
+                formData.phone ? '-translate-y-6 scale-75' : ''
+              } peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-3`}
             >
               Phone
             </label>
             {errors.phone && (
-              <p className="mt-1 text-sm text-red-500">{errors.phone}</p>
+              <p className="mt-1 text-sm text-red-500" role="alert">
+                {errors.phone}
+              </p>
             )}
           </div>
 
@@ -181,21 +190,24 @@ const ContactForm: React.FC = () => {
               id="service"
               value={formData.service}
               onChange={handleChange}
-              className={`w-full px-10 py-3 border ${
+              className={`w-full pl-10 pr-4 py-3 border ${
                 errors.service ? 'border-red-500' : 'border-gray-300'
-              } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500`}
-              placeholder=" "
+              } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 peer`}
               aria-label="Service Required"
               required
             />
             <label
               htmlFor="service"
-              className="absolute left-10 top-3 text-gray-500 transition-all pointer-events-none"
+              className={`absolute left-10 top-3 text-gray-500 transition-all pointer-events-none ${
+                formData.service ? '-translate-y-6 scale-75' : ''
+              } peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-3`}
             >
               Service Required *
             </label>
             {errors.service && (
-              <p className="mt-1 text-sm text-red-500">{errors.service}</p>
+              <p className="mt-1 text-sm text-red-500" role="alert">
+                {errors.service}
+              </p>
             )}
           </div>
 
@@ -207,30 +219,36 @@ const ContactForm: React.FC = () => {
               id="message"
               value={formData.message}
               onChange={handleChange}
-              className={`w-full px-10 py-3 border ${
+              className={`w-full pl-10 pr-4 py-3 border ${
                 errors.message ? 'border-red-500' : 'border-gray-300'
-              } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 resize-none`}
-              placeholder=" "
+              } rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 resize-none peer`}
               aria-label="Message"
               required
             ></textarea>
             <label
               htmlFor="message"
-              className="absolute left-10 top-3 text-gray-500 transition-all pointer-events-none"
+              className={`absolute left-10 top-3 text-gray-500 transition-all pointer-events-none ${
+                formData.message ? '-translate-y-6 scale-75' : ''
+              } peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-3`}
             >
               Message *
             </label>
             {errors.message && (
-              <p className="mt-1 text-sm text-red-500">{errors.message}</p>
+              <p className="mt-1 text-sm text-red-500" role="alert">
+                {errors.message}
+              </p>
             )}
           </div>
 
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full px-4 py-3 font-semibold text-white bg-green-600 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors duration-300"
+            className={`w-full px-4 py-3 font-semibold text-white bg-green-600 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors duration-300 ${
+              loading ? 'cursor-not-allowed opacity-50' : ''
+            }`}
+            disabled={loading}
           >
-            Submit
+            {loading ? 'Submitting...' : 'Submit'}
           </button>
         </form>
       </div>

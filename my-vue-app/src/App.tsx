@@ -1,5 +1,4 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -13,14 +12,12 @@ function App() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<ContactForm />} />
-          <Route path="/photos-reviews" element={<PhotosReviews />} />
-          {/* Add more routes as needed */}
-        </Routes>
+        {/* Load all components sequentially */}
+        <Home />
+        <AboutUs />
+        <Services />
+        <PhotosReviews />
+        <ContactForm />
       </main>
       <Footer />
     </div>

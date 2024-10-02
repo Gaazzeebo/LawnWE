@@ -1,0 +1,66 @@
+/* Footer.module.css */
+
+.footer {
+    background-color: #2F855A; /* Tailwind's green-700 */
+    color: #F7FAFC; /* Tailwind's gray-50 */
+  }
+  
+  .footerContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+  }
+  
+  .footerHeading {
+    font-size: 1.5rem; /* Equivalent to text-xl */
+    font-weight: 700; /* Equivalent to font-semibold */
+    margin-bottom: 1.5rem; /* Equivalent to mb-6 */
+  }
+  
+  .footerText {
+    color: #E2E8F0; /* Tailwind's gray-300 */
+    line-height: 1.6;
+  }
+  
+  .footerLink {
+    color: #E2E8F0; /* Tailwind's gray-300 */
+    transition: color 0.3s ease;
+  }
+  
+  .footerLink:hover {
+    color: #C6F6D5; /* Tailwind's green-300 */
+  }
+  
+  .socialIcon {
+    width: 24px;
+    height: 24px;
+    fill: #F7FAFC; /* Tailwind's gray-50 */
+    transition: fill 0.3s ease;
+  }
+  
+  .socialIcon:hover {
+    fill: #C6F6D5; /* Tailwind's green-300 */
+  }
+  
+  .contactItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem; /* Equivalent to mb-3 */
+  }
+  
+  .contactIcon {
+    margin-right: 0.5rem; /* Equivalent to mr-2 */
+    color: #F7FAFC; /* Tailwind's gray-50 */
+  }
+  
+  .divider {
+    border-top: 1px solid #2F855A; /* Tailwind's green-700 */
+    margin-top: 2rem; /* Equivalent to mt-8 */
+    padding-top: 1rem; /* Equivalent to pt-4 */
+  }
+  
+  .copyText {
+    text-align: center;
+    color: #CBD5E0; /* Tailwind's gray-400 */
+  }
+  

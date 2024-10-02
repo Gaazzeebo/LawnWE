@@ -11,7 +11,7 @@ const Home: React.FC = () => {
         "Pro Lawn Care transformed my yard into a green paradise. Their attention to detail and professionalism are unmatched.",
       name: "John Doe",
       location: "Springfield",
-      image: "/images/reviewer1.jpg", // Ensure this image exists in public/images/
+      image: "/images/photos/Default.png", // Ensure this image exists in public/images/
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ const Home: React.FC = () => {
         "Their team is reliable and always on time. My lawn has never looked better!",
       name: "Jane Smith",
       location: "Greendale",
-      image: "/images/reviewer2.jpg", // Ensure this image exists in public/images/
+      image: "/images/photos/Default.png", // Ensure this image exists in public/images/
     },
     {
       id: 3,
@@ -27,7 +27,7 @@ const Home: React.FC = () => {
         "Exceptional service and fantastic results. Highly recommend Pro Lawn Care!",
       name: "Mike Johnson",
       location: "Mapleton",
-      image: "/images/reviewer3.jpg", // Ensure this image exists in public/images/
+      image: "/images/photos/Default.png", // Ensure this image exists in public/images/
     },
     // Add more testimonials as needed
   ];

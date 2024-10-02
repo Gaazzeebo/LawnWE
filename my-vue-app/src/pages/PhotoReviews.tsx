@@ -106,6 +106,8 @@ const PhotosReviews: React.FC = () => {
       name: 'Jane Smith',
       rating: 4,
       comment: 'Professional and timely. Will use again.',
+      image: "/images/photos/Default.png",
+      
     },
     // Add more reviews as needed
   ];
@@ -177,7 +179,7 @@ const PhotosReviews: React.FC = () => {
               <div key={index} className="bg-gray-100 p-6 rounded-lg shadow">
                 <div className="flex items-center mb-4">
                   <img
-                    src="/images/reviewer.png"
+                    src="/images/photos/Default.png"
                     alt={review.name}
                     className="w-12 h-12 rounded-full mr-4"
                   />

@@ -86,6 +86,22 @@ const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} Pro Lawn Care. All rights reserved.
           </p>
         </div>
+
+        {/* Powered by Gaazzeebo Section */}
+        <div className={styles.poweredBy}>
+          <p>
+            Powered by{' '}
+            <a
+              href="https://gaazzeebo.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.footerLink}
+              style={{ color: '#FF6F61', fontWeight: 'bold', textDecoration: 'none' }}
+            >
+              Gaazzeebo
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
